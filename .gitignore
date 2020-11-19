@@ -1,4 +1,6 @@
 binary
+# VS Code
+.vscode
 # Prerequisites
 *.d
 
