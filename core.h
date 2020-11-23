@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 void greeting(char *);
 void bye(char *);
 

@@ -1,6 +1,5 @@
 #define NAME "PURPLE"
 
-#include <unistd.h>
 #include <sys/wait.h>
 #include "core.h"
 

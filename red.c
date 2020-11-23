@@ -1,6 +1,5 @@
 #define NAME "RED"
 
-#include <unistd.h>
 #include <sys/wait.h>
 #include "core.h"
 
