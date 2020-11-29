@@ -12,14 +12,14 @@ void bye(char *name)
 	fprintf(stderr, "%s завершился с PID = %d, PPID = %d!\n", name, getpid(), getppid());
 }
 
-pid_t create(color_t color, int exit_code)
+pid_t create(module_t module, int exit_code)
 {
 	pid_t pid = fork();
 	if (pid == -1) exit(EXIT_FAILURE);
 
 	if (pid == 0)
 	{
-		color();
+		module();
 		exit(exit_code);
 	}
 	

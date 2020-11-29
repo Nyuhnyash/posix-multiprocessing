@@ -3,9 +3,9 @@
 void greeting(char *);
 void bye(char *);
 
-typedef void(*color_t)(void);
+typedef void(*module_t)(void);
 
-pid_t create(color_t, int);
+pid_t create(module_t, int);
 
 void blue(void);
 void red(void);
