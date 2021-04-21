@@ -34,8 +34,7 @@ void red()
 
 	detach_shm(sum);
 
-	wait(&purple_exit_code);
-	wait(&yellow_exit_code);
+	sem(RED_PURPLE_SEM, 1);
 
 	waitpid(yellow_pid, &yellow_exit_code, 0);
 	waitpid(purple_pid, &purple_exit_code, 0);
