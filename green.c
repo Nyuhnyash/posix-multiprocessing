@@ -15,5 +15,14 @@ void green()
 	int count = print_swapped_XY(YELLOW_GREEN_FIFO_PATH, lengths);
 	if (count > MAX_LINES) 
 		err("Input file is too long");
+
+	for (int i = 0; i < count; i++)
+	{
+		sem(GREEN_ORANGE_SEM, 1 + lengths[i]);
+		sem(GREEN_ORANGE_SEM, 0);
+	}
+
+	sem(GREEN_ORANGE_SEM, LAST_LENGTH);
+	
 	bye(NAME);
 }
