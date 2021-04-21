@@ -14,9 +14,9 @@ void yellow()
 	pid_t green_pid = create(green, green_exit_code);
 
 	greeting(NAME);
-	
+
 	print_unchanged(YELLOW_GREEN_FIFO_PATH);
-	
+
 	wait(&green_exit_code);
 	bye(NAME);
 }

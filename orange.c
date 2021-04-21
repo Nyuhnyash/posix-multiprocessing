@@ -6,7 +6,6 @@
 #include "lib/sem.h"
 #include "lib/shm.h"
 
-
 void orange()
 {
 	greeting(NAME);
@@ -15,11 +14,11 @@ void orange()
 	int *sum = attach_shm();
 	*sum = 0;
 
-	while(1)
+	while (1)
 	{
 		sem(GREEN_ORANGE_SEM, -1);
 		val = sem_getval(GREEN_ORANGE_SEM);
-		if (val + 1 == LAST_LENGTH) 
+		if (val + 1 == LAST_LENGTH)
 		{
 			sem_setval(GREEN_ORANGE_SEM, 0);
 			break;
@@ -33,6 +32,6 @@ void orange()
 	detach_shm(sum);
 
 	sem(ORANGE_RED_SEM, 1);
-	
+
 	bye(NAME);
 }

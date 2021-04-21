@@ -11,9 +11,9 @@ void green()
 {
 	greeting(NAME);
 
-	int lengths[MAX_LINES] = { 0 };
+	int lengths[MAX_LINES] = {0};
 	int count = print_swapped_XY(YELLOW_GREEN_FIFO_PATH, lengths);
-	if (count > MAX_LINES) 
+	if (count > MAX_LINES)
 		err("Input file is too long");
 
 	for (int i = 0; i < count; i++)
@@ -23,6 +23,6 @@ void green()
 	}
 
 	sem(GREEN_ORANGE_SEM, LAST_LENGTH);
-	
+
 	bye(NAME);
 }

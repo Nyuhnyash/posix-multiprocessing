@@ -4,7 +4,6 @@
 #include <stdio.h>
 #include <fcntl.h>
 
-
 #include "core.h"
 #include "pathnames.h"
 #include "lib/shm.h"
@@ -26,8 +25,8 @@ void red()
 	printf("%s получил из разделяемой памяти: %d\n", NAME, *sum);
 
 	if (!access(RED_RESULT_PATH, F_OK))
-        remove(RED_RESULT_PATH);
-	int fd = open(RED_RESULT_PATH, O_WRONLY | O_CREAT | O_EXCL, 0666/*S_IRUSR | S_IWUSR*/);
+		remove(RED_RESULT_PATH);
+	int fd = open(RED_RESULT_PATH, O_WRONLY | O_CREAT | O_EXCL, 0666 /*S_IRUSR | S_IWUSR*/);
 	write(fd, sum, sizeof(int));
 
 	close(fd);

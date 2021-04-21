@@ -16,7 +16,7 @@ void create_fifo(const char *path)
         remove(path);
     if (mkfifo(path, S_IFIFO | 0666))
         err("Failed to create fifo");
-    
+
     puts("FIFO создано");
 }
 
@@ -26,7 +26,7 @@ void print_unchanged(const char *fifopath)
 
     char buf[256];
     while (fgets(buf, sizeof(buf), stdin) != NULL)
-            fprintf(isdigit(buf[0]) ? stdout : fifo, "%s", buf);
+        fprintf(isdigit(buf[0]) ? stdout : fifo, "%s", buf);
 
     fclose(fifo);
 }
@@ -34,7 +34,7 @@ void print_unchanged(const char *fifopath)
 int print_swapped_XY(const char *fifopath, int *lengths /* zero-filled array */)
 {
     FILE *fifo = fopen(fifopath, "r");
-    
+
     char c;
     int line_num = 0;
 

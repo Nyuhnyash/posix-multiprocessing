@@ -14,7 +14,7 @@ void sig_handler(int signal)
 		processes_count++;
 	if (signal == SIGUSR2)
 		processes_count--;
-	
+
 	fprintf(stderr, "Количество процессов: %d\n", processes_count);
 	sem(PROCESS_COUNTER_SEM, 1);
 }
@@ -24,7 +24,7 @@ void blue()
 	sem_setval(PROCESS_COUNTER_SEM, 1);
 	signal(SIGUSR1, sig_handler);
 	signal(SIGUSR2, sig_handler);
-	
+
 	int red_exit_code;
 	pid_t red_pid = create(red, red_exit_code);
 
