@@ -1,15 +1,16 @@
 #include <unistd.h>
 
-void greeting(char *);
-void bye(char *);
+void greeting(const char *);
+void bye(const char *);
+void err(const char *);
 
-typedef void(*module_t)(void);
+typedef void(*module_t)();
 
 pid_t create(module_t, int);
 
-void blue(void);
-void red(void);
-void purple(void);
-void orange(void);
-void yellow(void);
-void green(void);
+void blue();
+void red();
+void purple();
+void orange();
+void yellow();
+void green();
