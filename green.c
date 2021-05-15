@@ -17,13 +17,15 @@ void green()
 	if (count > MAX_LINES)
 		err("Input file is too long");
 
+	printf("%s получил %d строки через FIFO\n", NAME, count);
+
 	for (int i = 0; i < count; i++)
 	{
-		sem(GREEN_ORANGE_SEM, 1 + lengths[i]);
-		sem(GREEN_ORANGE_SEM, 0);
+		sem(GREEN_ORANGE_SEM_SYNC, 0);
+		sem_setval(GREEN_ORANGE_SEM_VALUE, lengths[i]);
+		printf("%s передал, посредством семафора: %d\n", NAME, lengths[i]);
+		sem(GREEN_ORANGE_SEM_SYNC, i + 1 < count ? 2 : 3);
 	}
-
-	sem(GREEN_ORANGE_SEM, LAST_LENGTH);
 
 	bye(NAME);
 }
