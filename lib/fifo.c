@@ -19,7 +19,7 @@ void create_fifo(const char *path)
     puts("FIFO создано");
 }
 
-void print_unchanged(const char *fifopath)
+void filter(const char *fifopath)
 {
     FILE *fifo = fopen(fifopath, "w");
 
@@ -30,7 +30,7 @@ void print_unchanged(const char *fifopath)
     fclose(fifo);
 }
 
-int print_swapped_XY(const char *fifopath, int *lengths /* zero-filled array */)
+int swap_XY(const char *fifopath, int *lengths /* zero-filled array */)
 {
     FILE *fifo = fopen(fifopath, "r");
 

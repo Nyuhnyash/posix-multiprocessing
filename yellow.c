@@ -15,7 +15,8 @@ void yellow()
 
 	greeting(NAME);
 
-	print_unchanged(YELLOW_GREEN_FIFO_PATH);
+	filter(YELLOW_GREEN_FIFO_PATH);
+	printf("%s передал строки через FIFO\n", NAME);
 
 	wait(&green_exit_code);
 	bye(NAME);
