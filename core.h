@@ -1,4 +1,5 @@
 #include <unistd.h>
+#include <stdio.h>
 
 void greeting(const char *);
 void bye(const char *);

@@ -1,7 +1,6 @@
 #define NAME "RED"
 
 #include <sys/wait.h>
-#include <stdio.h>
 #include <fcntl.h>
 
 #include "core.h"

@@ -1,7 +1,6 @@
 #define NAME "BLUE"
 
 #include <sys/wait.h>
-#include <stdio.h>
 
 #include "core.h"
 #include "lib/sem.h"

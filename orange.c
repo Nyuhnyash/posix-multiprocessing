@@ -1,7 +1,5 @@
 #define NAME "ORANGE"
 
-#include <stdio.h>
-
 #include "core.h"
 #include "lib/sem.h"
 #include "lib/shm.h"

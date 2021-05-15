@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <unistd.h>
 #include <sys/sem.h>
 #include "sem.h"
@@ -26,7 +25,8 @@ void sem(int number, int operation)
 	struct sembuf buf = {
 		.sem_num = number,
 		.sem_op = operation,
-		.sem_flg = 0};
+		.sem_flg = 0
+	};
 
 	semop(semid(), &buf, 1);
 }

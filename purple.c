@@ -2,7 +2,6 @@
 
 #include <sys/wait.h>
 #include <sys/stat.h>
-#include <stdio.h>
 #include <time.h>
 #include <string.h>
 
@@ -22,7 +21,6 @@ void purple()
 	sem(RED_PURPLE_SEM, -1);
 
 	time_t now = time(0);
-	struct tm tstruct;
 	char dirname[80];
 	strftime(dirname, sizeof(dirname), "result_%Y-%m-%d_%X", localtime(&now));
 

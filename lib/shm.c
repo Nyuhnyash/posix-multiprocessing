@@ -1,6 +1,5 @@
 #include <sys/shm.h>
 #include <errno.h>
-#include <stdio.h>
 
 #include "../core.h"
 
